@@ -8,13 +8,14 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox TextWrapping="Wrap" Margin="5,8,355,0" x:Name="TekstBox" VerticalAlignment="Top" Height="155"/>
-        
+
         <CheckBox Content="Underline" Margin="375,186,310,211" RenderTransformOrigin="0.5,0.5" x:Name="UnderlineBox" Checked="UnderlineBox_Checked"/>
         <CheckBox Content="Italic" Margin="178,185,488,209" x:Name="ItalicBox" Checked="ItalicBox_Checked"/>
         <CheckBox Content="Bold" Margin="9,183,666,212" x:Name="BoldBox" Checked="BoldBox_Checked"/>
-        
-        <TextBlock TextWrapping="Wrap" Margin="2,209,683,195" VerticalAlignment="Center" Text="Wielkość Czcionki:"/>
-        
+
+        <TextBlock TextWrapping="Wrap" Margin="2,224,683,0" VerticalAlignment="Top" Text="Wielkość Czcionki:"/>
+        <Slider x:Name="Slider" Width="120" Margin="134,223,546,162" RenderTransformOrigin="0.492,1.103" Minimum="10" Maximum="30" Value="14"/>
+
 
 
 
