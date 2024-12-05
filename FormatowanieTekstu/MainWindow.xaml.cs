@@ -20,5 +20,20 @@ namespace FormatowanieTekstu
         {
             InitializeComponent();
         }
+
+        private void BoldBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ItalicBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UnderlineBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
