@@ -1,16 +1,9 @@
-﻿using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FormatowanieTekstu
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -18,29 +11,113 @@ namespace FormatowanieTekstu
             InitializeComponent();
         }
 
-        private void BoldBox_Checked(object sender, RoutedEventArgs e)
+        // Zmiana rozmiaru czcionki
+        private void FontSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-
+            TekstBox.FontSize = Slider.Value;
         }
 
-        private void ItalicBox_Checked(object sender, RoutedEventArgs e)
+        // Zmiana stanu pogrubienia
+        private void BoldChecked(object sender, RoutedEventArgs e)
         {
-
+            TekstBox.FontWeight = FontWeights.Bold;
         }
 
-        private void UnderlineBox_Checked(object sender, RoutedEventArgs e)
+        private void BoldUnchecked(object sender, RoutedEventArgs e)
         {
-
+            TekstBox.FontWeight = FontWeights.Normal;
         }
 
-        private void StylTekstu(object sender, RoutedEventArgs e)
+        // Zmiana stanu kursywy
+        private void ItalicChecked(object sender, RoutedEventArgs e)
         {
-
+            TekstBox.FontStyle = FontStyles.Italic;
         }
 
-        private void StylTła(object sender, RoutedEventArgs e)
+        private void ItalicUnchecked(object sender, RoutedEventArgs e)
         {
-
+            TekstBox.FontStyle = FontStyles.Normal;
         }
+
+        // Zmiana stanu podkreślenia
+        private void UnderlineChecked(object sender, RoutedEventArgs e)
+        {
+            TekstBox.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void UnderlineUnchecked(object sender, RoutedEventArgs e)
+        {
+            TekstBox.TextDecorations = null;
+        }
+
+        // Zmiana koloru czcionki
+        private void Czarny(object sender, RoutedEventArgs e)
+        {
+            TekstBox.Foreground = Brushes.Black;
+        }
+
+        private void Czerwony(object sender, RoutedEventArgs e)
+        {
+            TekstBox.Foreground = Brushes.Red;
+        }
+
+
+        private void Niebieski(object sender, RoutedEventArgs e)
+        {
+            TekstBox.Foreground = Brushes.Blue;
+        }
+
+        private void Białe(object sender, RoutedEventArgs e)
+        {
+            TekstBox.Background = Brushes.White;
+        }
+
+        private void Żółte(object sender, RoutedEventArgs e)
+        {
+            TekstBox.Background = Brushes.Yellow;
+        }
+
+
+        private void Zielone(object sender, RoutedEventArgs e)
+        {
+            TekstBox.Background = Brushes.Green;
+        }
+
+
+
+
+
+
+        private void DoLewej(object sender, RoutedEventArgs e)
+        {
+            TekstBox.TextAlignment = TextAlignment.Left;
+        }
+
+        private void DoSrodka(object sender, RoutedEventArgs e)
+        {
+            TekstBox.TextAlignment = TextAlignment.Center;
+        }
+
+        private void DoPrawej(object sender, RoutedEventArgs e)
+        {
+            TekstBox.TextAlignment = TextAlignment.Right;
+        }
+      
+        
+
+
+
+
+
+
     }
 }
+
+
+
+
+
+
+
+
+

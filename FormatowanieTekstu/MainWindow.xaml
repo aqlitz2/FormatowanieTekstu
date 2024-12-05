@@ -6,27 +6,60 @@
         xmlns:local="clr-namespace:FormatowanieTekstu"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Background>
+
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#22c1c3" Offset="0.0"/>
+            <GradientStop Color="#7e0b85" Offset="0.45"/>
+            <GradientStop Color="#fdbb2d" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+
+
     <Grid RenderTransformOrigin="0.481,0.443">
-        <TextBox TextWrapping="Wrap" Margin="5,8,355,0" x:Name="TekstBox" VerticalAlignment="Top" Height="155"/>
+        <TextBox TextWrapping="Wrap" Margin="0,-2,438,0" x:Name="TekstBox" VerticalAlignment="Top" Height="166" RenderTransformOrigin="0.141,0.271" VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto" SpellCheck.IsEnabled="True" AcceptsReturn="True"/>
 
-        <CheckBox Content="Underline" Margin="230,183,455,214" RenderTransformOrigin="0.5,0.5" x:Name="UnderlineBox" Checked="UnderlineBox_Checked"/>
-        <CheckBox Content="Italic" Margin="116,183,550,211" x:Name="ItalicBox" Checked="ItalicBox_Checked" RenderTransformOrigin="0.07,0.228"/>
-        <CheckBox Content="Bold" Margin="9,183,666,212" x:Name="BoldBox" Checked="BoldBox_Checked" RenderTransformOrigin="0.075,0.242"/>
+        <CheckBox Content="Underline" Margin="230,183,455,214" RenderTransformOrigin="0.061,0.217" x:Name="UnderlineBox" Checked="UnderlineChecked" Unchecked="UnderlineUnchecked"/>
+        <CheckBox Content="Italic" Margin="116,183,550,215" x:Name="ItalicBox" Checked="ItalicChecked" Unchecked="ItalicUnchecked" RenderTransformOrigin="0.07,0.228"/>
+        <CheckBox Content="Bold" Margin="6,180,669,215" x:Name="BoldBox" Checked="BoldChecked" Unchecked="BoldUnchecked" RenderTransformOrigin="0.075,0.242"/>
 
-        <TextBlock TextWrapping="Wrap" Margin="2,224,683,0" VerticalAlignment="Top" Text="Wielkość Czcionki:"/>
-        <Slider x:Name="Slider" Width="120" Margin="134,223,546,162" RenderTransformOrigin="0.492,1.103" Minimum="10" Maximum="30" Value="14"/>
-
-        <RadioButton Content="Czarny" GroupName="KolorCzcionki" IsChecked="True" Checked="StylTekstu" Margin="4,272,694,122" RenderTransformOrigin="0.072,0.199"/>
-        <RadioButton Content="Czerwony" GroupName="KolorCzcionki" Margin="95,272,600,117" Checked="StylTekstu" RenderTransformOrigin="-0.013,0.297"/>
-        <RadioButton Content="Niebieski" GroupName="KolorCzcionki" Margin="215,273,447,124" Checked="StylTekstu"/>
-
-        <TextBlock Text="Tło:" VerticalAlignment="Top" Margin="4,336,474,0"/>
-        <RadioButton Content="Białe" GroupName="KolorTła" IsChecked="True" Checked="StylTła" Margin="257,364,403,34" RenderTransformOrigin="0.062,0.299"/>
-        <RadioButton Content="Zółte" GroupName="KolorTła" Margin="142,362,537,37" Checked="StylTła" RenderTransformOrigin="0.057,0.288"/>
-        <RadioButton Content="Zielone" GroupName="KolorTła" Margin="2,358,698,15" Checked="StylTła" RenderTransformOrigin="0.07,0.102"/>
+        <TextBlock Text="Wielkość tekstu:" VerticalAlignment="Top" Margin="5,223,655,0" FontFamily="Italic" FontStyle="Italic"/>
+        <Slider x:Name="Slider" Minimum="10" Maximum="30" Value="14" Margin="122,219,487,174" ValueChanged="FontSizeSlider_ValueChanged" RenderTransformOrigin="0.507,0.441"/>
 
 
+        <RadioButton Content="Czarny" GroupName="Style" IsChecked="True" Checked="Czarny" Margin="4,272,694,122" RenderTransformOrigin="0.072,0.199"/>
+        <RadioButton Content="Czerwony" GroupName="Style" Margin="95,272,600,117" Checked="Czerwony" RenderTransformOrigin="0.086,0.179"/>
+        <RadioButton Content="Niebieski" GroupName="Style" Margin="215,273,447,124" Checked="Niebieski" RenderTransformOrigin="0.058,0.244"/>
 
+        <TextBlock Text="Tło:" VerticalAlignment="Top" Margin="4,336,474,0" FontSize="14" FontFamily="Italic" FontStyle="Italic"/>
+        <RadioButton Content="Białe" GroupName="Style" IsChecked="True" Checked="Białe" Margin="197,357,463,35" RenderTransformOrigin="0.062,0.299"/>
+        <RadioButton Content="Zółte" GroupName="Style" Margin="94,357,609,38" Checked="Żółte" RenderTransformOrigin="0.057,0.288"/>
+        <RadioButton Content="Zielone" GroupName="Style" Margin="2,358,703,15" Checked="Zielone" RenderTransformOrigin="0.07,0.102"/>
+
+        <Button Content="Lewo" Margin="442,356,0,0" RenderTransformOrigin="0.506,0.488" Click="DoLewej" VerticalAlignment="Top" HorizontalAlignment="Left" Height="29" Width="91"></Button>
+        <Button Content="Srodek" Margin="558,357,0,0" RenderTransformOrigin="0.57,0.635" Click="DoSrodka" VerticalAlignment="Top" HorizontalAlignment="Left" Height="29" Width="91"></Button>
+        <Button Content="Prawo" Margin="667,357,0,0" RenderTransformOrigin="0.506,0.488" Click="DoPrawej" VerticalAlignment="Top" HorizontalAlignment="Left" Height="30" Width="91"></Button>
+
+        <ComboBox Margin="624,10,10,384" SelectionChanged="RozmiarBox">
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox x:Name="FontComboBox" Margin="410,8,232,383" RenderTransformOrigin="0.5,0.5" SelectionChanged="CzcionkaBox">
+            <ComboBoxItem>Arial</ComboBoxItem>
+            <ComboBoxItem>Courier New</ComboBoxItem>
+            <ComboBoxItem>Times New Roman</ComboBoxItem>
+            <ComboBoxItem>Verdana</ComboBoxItem>
+
+
+
+        </ComboBox>
 
 
 
