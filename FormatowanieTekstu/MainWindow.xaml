@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <TextBox TextWrapping="Wrap" Text="TextBox" Margin="5,2,355,253" x:Name="TekstBox"/>
+        <CheckBox Content="Underline" Margin="375,186,310,211" RenderTransformOrigin="0.5,0.5" x:Name="UnderlineBox"/>
+        <CheckBox Content="Italic" Margin="178,185,488,209" x:Name="ItalicBox"/>
+        <CheckBox Content="Bold" Margin="9,185,666,221" x:Name="BoldBox"/>
+        
+
+
+
+
+
+
+
 
     </Grid>
 </Window>
