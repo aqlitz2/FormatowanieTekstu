@@ -35,5 +35,15 @@ namespace FormatowanieTekstu
         {
 
         }
+
+        private void StylTekstu(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StylTła(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

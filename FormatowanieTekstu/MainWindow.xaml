@@ -6,19 +6,24 @@
         xmlns:local="clr-namespace:FormatowanieTekstu"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid RenderTransformOrigin="0.481,0.443">
         <TextBox TextWrapping="Wrap" Margin="5,8,355,0" x:Name="TekstBox" VerticalAlignment="Top" Height="155"/>
 
-        <CheckBox Content="Underline" Margin="375,186,310,211" RenderTransformOrigin="0.5,0.5" x:Name="UnderlineBox" Checked="UnderlineBox_Checked"/>
-        <CheckBox Content="Italic" Margin="178,185,488,209" x:Name="ItalicBox" Checked="ItalicBox_Checked"/>
-        <CheckBox Content="Bold" Margin="9,183,666,212" x:Name="BoldBox" Checked="BoldBox_Checked"/>
+        <CheckBox Content="Underline" Margin="230,183,455,214" RenderTransformOrigin="0.5,0.5" x:Name="UnderlineBox" Checked="UnderlineBox_Checked"/>
+        <CheckBox Content="Italic" Margin="116,183,550,211" x:Name="ItalicBox" Checked="ItalicBox_Checked" RenderTransformOrigin="0.07,0.228"/>
+        <CheckBox Content="Bold" Margin="9,183,666,212" x:Name="BoldBox" Checked="BoldBox_Checked" RenderTransformOrigin="0.075,0.242"/>
 
         <TextBlock TextWrapping="Wrap" Margin="2,224,683,0" VerticalAlignment="Top" Text="Wielkość Czcionki:"/>
         <Slider x:Name="Slider" Width="120" Margin="134,223,546,162" RenderTransformOrigin="0.492,1.103" Minimum="10" Maximum="30" Value="14"/>
 
+        <RadioButton Content="Czarny" GroupName="KolorCzcionki" IsChecked="True" Checked="StylTekstu" Margin="4,272,694,122" RenderTransformOrigin="0.072,0.199"/>
+        <RadioButton Content="Czerwony" GroupName="KolorCzcionki" Margin="95,272,600,117" Checked="StylTekstu" RenderTransformOrigin="-0.013,0.297"/>
+        <RadioButton Content="Niebieski" GroupName="KolorCzcionki" Margin="215,273,447,124" Checked="StylTekstu"/>
 
-
-
+        <TextBlock Text="Tło:" VerticalAlignment="Top" Margin="4,336,474,0"/>
+        <RadioButton Content="Białe" GroupName="KolorTła" IsChecked="True" Checked="StylTła" Margin="257,364,403,34" RenderTransformOrigin="0.062,0.299"/>
+        <RadioButton Content="Zółte" GroupName="KolorTła" Margin="142,362,537,37" Checked="StylTła" RenderTransformOrigin="0.057,0.288"/>
+        <RadioButton Content="Zielone" GroupName="KolorTła" Margin="2,358,698,15" Checked="StylTła" RenderTransformOrigin="0.07,0.102"/>
 
 
 
